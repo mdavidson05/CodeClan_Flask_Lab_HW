@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - Da Shop</title>
+</head>
+<body>
+    <header class="header">
+        <h1>
+            My Order List!
+        </h1>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="styles" id="grid_container">
+
+    <section id="header">Name </section>
+    <section id="header">Date </section>
+    <section>Quantity </section>
+    <section>Price </section>
+    <section>Title </section>
+    <section>Order </section>
+    <!-- <div> -->
+        {% for item in order_list %}
+     <!-- This format means HTML can you please use Python? This is a for loop-->
+        
+     
+        
+            {{ item.name}}: <b> {{item.date}}</b>  <b> {{item.quantity}}</b>  <b> {{item.price}}</b>  <b> {{item.title}}</b> <a href="orders/{{order_list.index(item)}}">Orders</a><!-- #because defined in task class, the colon is hardcoded-->
+        
+        <!-- </div> -->
+
+    {% endfor %} <!-- This ends the for loop-->
+    </div>
+
+</body>
+</html>
+
